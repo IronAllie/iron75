@@ -68,7 +68,7 @@ function installCard() {
 export function vAuth() {
   const msg = S.authMsg ? `<p class="note">${esc(S.authMsg)}</p>` : "";
   const hero = `<div class="hero-auth"><div class="daynum">Iron 75</div><p>Train, eat and track like it matters, for 75 days straight. Programs built for your equipment, a 13,000-food verified database, adaptive calorie targets, progress photos and streaks.</p></div>`;
-  if (!configured) return hero + `<div class="card"><h2>Not connected yet</h2><p class="small">This copy of Iron 75 isn't connected to a Supabase database, so accounts and sync are off. The owner fills in <code>js/config.js</code> to turn them on (see SETUP.md).</p><button class="btn primary" data-act="localMode">Use on this device only</button></div>`;
+  if (!configured) return hero + `<div class="card"><h2>Not connected yet</h2><p class="small">This copy of Iron 75 isn't connected to a Supabase database, so accounts and sync are off. The owner fills in <code>config.js</code> to turn them on (see SETUP.md).</p><button class="btn primary" data-act="localMode">Use on this device only</button></div>`;
   if (S.auth === "signup") return hero + `<form class="card" data-form="signup"><h2>Create your account</h2>${msg}
     ${field("Your first name", `<input type="text" id="au-name" autocomplete="given-name" required>`)}
     ${field("Email", `<input type="email" id="au-email" autocomplete="email" required>`)}

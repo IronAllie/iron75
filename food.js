@@ -7,7 +7,7 @@ export function foodDbReady() { return !!DB; }
 export function loadFoodDb() {
   if (DB) return Promise.resolve(DB);
   if (loading) return loading;
-  loading = fetch("data/foods.json").then(r => { if (!r.ok) throw new Error("food file " + r.status); return r.json(); }).then(j => {
+  loading = fetch("foods.json").then(r => { if (!r.ok) throw new Error("food file " + r.status); return r.json(); }).then(j => {
     const keys = j.keys;
     DB = j.foods.map(f => {
       const per100 = {}; keys.forEach((k, i) => { if (f[4][i] != null) per100[k] = f[4][i]; });

@@ -1,7 +1,7 @@
 /* Iron 75 offline support. Bump VERSION whenever you upload changed files. */
-const VERSION = "iron75-v3.0.0";
-const SHELL = ["./", "index.html", "styles.css", "manifest.webmanifest", "icons/icon-180.png", "icons/icon-192.png", "icons/icon-512.png",
-  "js/app.js", "js/config.js", "js/core.js", "js/food.js", "js/library.js", "js/nutrition.js", "js/store.js", "js/util.js", "js/views.js", "data/foods.json"];
+const VERSION = "iron75-v3.0.1";
+const SHELL = ["./", "index.html", "styles.css", "manifest.webmanifest", "icon-180.png", "icon-192.png", "icon-512.png",
+  "app.js", "config.js", "core.js", "food.js", "library.js", "nutrition.js", "store.js", "util.js", "views.js", "foods.json"];
 const CDN = ["cdn.jsdelivr.net", "fonts.googleapis.com", "fonts.gstatic.com"];
 
 self.addEventListener("install", e => {
@@ -21,7 +21,7 @@ self.addEventListener("fetch", e => {
   }
   if (url.origin !== self.location.origin) return; // Supabase, food APIs: always live
   // The food database is large and rarely changes: cache first.
-  if (url.pathname.endsWith("/data/foods.json")) {
+  if (url.pathname.endsWith("/foods.json")) {
     e.respondWith(caches.match(req).then(hit => hit || fetch(req).then(res => { const copy = res.clone(); caches.open(VERSION).then(c => c.put(req, copy)); return res; })));
     return;
   }

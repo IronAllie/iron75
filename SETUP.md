@@ -5,7 +5,7 @@ About 20 minutes, no coding. You'll create a free Supabase project (accounts and
 ## 1. Create the database (Supabase)
 
 1. Go to **supabase.com**, sign up, and click **New project**. Name it `iron75`, set a strong database password (save it in your password manager), pick the region closest to you, and create it. Wait about a minute.
-2. In the left sidebar open **SQL Editor → New query**. Open `supabase/schema.sql` from this folder, copy all of it, paste it in, and click **Run**. You should see "Success. No rows returned."
+2. In the left sidebar open **SQL Editor → New query**. Open `schema.sql` from this folder, copy all of it, paste it in, and click **Run**. You should see "Success. No rows returned."
    - This creates the tables, the private photo storage bucket, and the security rules that keep every person's data visible only to them.
 3. Open **Project Settings → API** (or the **Connect** button). Copy:
    - **Project URL** (looks like `https://abcdxyz.supabase.co`)
@@ -14,7 +14,7 @@ About 20 minutes, no coding. You'll create a free Supabase project (accounts and
 
 ## 2. Connect the app
 
-Open `js/config.js` in any text editor and paste the two values:
+Open `config.js` in any text editor and paste the two values:
 
 ```js
 SUPABASE_URL: "https://abcdxyz.supabase.co",
@@ -27,7 +27,7 @@ The anon key is designed to be public. Your data is protected by the Row Level S
 ## 3. Put it online (GitHub Pages)
 
 1. Sign up at **github.com**, click **New repository**, name it `iron75`, set it to **Public**, and create it.
-2. Click **uploading an existing file**, drag in **everything inside** the `iron75-app` folder (`index.html`, `js`, `data`, `icons`, `supabase`, and the rest), then click **Commit changes**.
+2. Click **uploading an existing file**, select **all the files** in the `iron75-app` folder (Ctrl+A) and drag them in, then click **Commit changes**. There are no subfolders, so everything sits side by side.
 3. Open **Settings → Pages**. Under *Build and deployment* choose **Deploy from a branch**, branch **main**, folder **/ (root)**, then **Save**.
 4. After a minute your app is live at `https://YOUR-USERNAME.github.io/iron75/`.
 
@@ -49,7 +49,7 @@ Also turn on **Leaked password protection** under Authentication → Policies if
 
 ## 5. Optional: your own USDA key
 
-Branded-food search uses USDA's shared demo key, which allows about 30 searches an hour across everyone. A free personal key raises that to 1,000 an hour. Get one at **fdc.nal.usda.gov/api-key-signup** and paste it into `USDA_API_KEY` in `js/config.js`, then re-upload that file.
+Branded-food search uses USDA's shared demo key, which allows about 30 searches an hour across everyone. A free personal key raises that to 1,000 an hour. Get one at **fdc.nal.usda.gov/api-key-signup** and paste it into `USDA_API_KEY` in `config.js`, then re-upload that file.
 
 ## 6. Install on your iPhone
 
@@ -61,7 +61,7 @@ Send friends the same address, or use **More → Invite friends** in the app. Ev
 
 1. Upload the changed files to the same GitHub repository (they replace the old ones).
 2. Open `sw.js`, change `VERSION` (for example `iron75-v3.0.1`), and upload it too. That tells phones to pick up the new version.
-3. If you changed `supabase/schema.sql`, run it again in the SQL Editor. It's safe to re-run.
+3. If you changed `schema.sql`, run it again in the SQL Editor. It's safe to re-run.
 
 ## Free-tier limits
 
@@ -73,12 +73,12 @@ Send friends the same address, or use **More → Invite friends** in the app. Ev
 
 | Part | What it does |
 |---|---|
-| `js/library.js` | 130 exercises and conditioning drills tagged by equipment and movement, equipment presets, and the program generator (2–6 day splits, goals, experience, session length, 4-week blocks with deloads) |
-| `data/foods.json` | 13,224 USDA-verified foods (SR Legacy + FNDDS) with 35 nutrients per 100 g and household portions |
-| `js/food.js` | Food search (curated common foods + ranked USDA search), Open Food Facts and USDA Branded lookups, barcode scanning |
-| `js/nutrition.js` | Calorie and macro targets, adult vitamin and mineral targets (DRIs), trend weight, adaptive expenditure |
-| `js/core.js` | Progression, PR detection, streaks, the 75-day challenge, and the "Are you building?" analysis |
-| `js/store.js` | Supabase sign-in, sync, offline queue, and private photo storage |
-| `supabase/schema.sql` | Tables, Row Level Security, storage bucket and policies, and account deletion |
+| `library.js` | 130 exercises and conditioning drills tagged by equipment and movement, equipment presets, and the program generator (2–6 day splits, goals, experience, session length, 4-week blocks with deloads) |
+| `foods.json` | 13,224 USDA-verified foods (SR Legacy + FNDDS) with 35 nutrients per 100 g and household portions |
+| `food.js` | Food search (curated common foods + ranked USDA search), Open Food Facts and USDA Branded lookups, barcode scanning |
+| `nutrition.js` | Calorie and macro targets, adult vitamin and mineral targets (DRIs), trend weight, adaptive expenditure |
+| `core.js` | Progression, PR detection, streaks, the 75-day challenge, and the "Are you building?" analysis |
+| `store.js` | Supabase sign-in, sync, offline queue, and private photo storage |
+| `schema.sql` | Tables, Row Level Security, storage bucket and policies, and account deletion |
 
 Food data: USDA FoodData Central (public domain); Open Food Facts (Open Database License); USDA Branded Foods via the FoodData Central API.
