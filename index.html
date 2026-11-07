@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Iron 75</title>
+<meta name="description" content="75-day challenge app: training built for your equipment, a verified food database, adaptive calorie targets, progress photos and streaks.">
+<meta name="theme-color" content="#ECEEEA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1216" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Iron 75">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="wrap" id="app"><p class="muted">Loading Iron 75…</p></main>
+<div id="sheet" hidden></div>
+<div id="modal" hidden></div>
+<div id="viewer" hidden></div>
+<div class="timer" id="timer" hidden></div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<nav class="tabs" id="tabsNav" aria-label="Sections" hidden><div id="tabs"></div></nav>
+<input type="file" id="photoInput" accept="image/*" hidden>
+<noscript><p style="padding:20px">Iron 75 needs JavaScript turned on.</p></noscript>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
